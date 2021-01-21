@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import Stat_Controller.StatButton;
+import State_Controller.WorkState;
 import TimerButton_Controller.WorkTimerButton;
 
 public class Work extends ViewCore {
@@ -78,5 +79,6 @@ public class Work extends ViewCore {
 		State4.setBounds(252, 167, 18, 16);
 		getContentPane().add(State4);
 
+		new WorkState().DotState(state, State1, State2, State3, State4);
 	}
 }

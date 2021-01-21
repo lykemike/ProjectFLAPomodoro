@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import Stat_Controller.StatButton;
+import State_Controller.BreakState;
 import TimerButton_Controller.BreakTimerButton;
 
 public class Break extends ViewCore {
@@ -88,5 +89,6 @@ public class Break extends ViewCore {
 		getContentPane().add(State4);
 		
 		new BreakTimerButton(PlayPause, Skip, Time, state);
+		new BreakState().DotState(state, State1, State2, State3, State4);
 	}
 }
