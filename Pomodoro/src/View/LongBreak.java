@@ -6,6 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import Stat_Controller.StatButton;
+import TimerButton_Controller.LBreakTimerButton;
+
 public class LongBreak extends ViewCore {
 	private JLabel Time, State1, State2, State3, State4;
 	private JButton PlayPause, Stats, Skip;
@@ -35,8 +38,8 @@ public class LongBreak extends ViewCore {
 		PlayPause.setFocusPainted(false);
 		PlayPause.setOpaque(false);
 		getContentPane().add(PlayPause);
-
 		
+		// view stats button
 		Stats = new JButton("view Stats");
 		Stats.setFont(new Font("Tahoma", Font.BOLD, 15));
 		Stats.setBounds(300, 188, 124, 25);
@@ -44,8 +47,10 @@ public class LongBreak extends ViewCore {
 		Stats.setContentAreaFilled(false);
 		Stats.setFocusPainted(false);
 		Stats.setOpaque(false);
+		new StatButton(Stats);
 		getContentPane().add(Stats);
 
+		// view skip button
 		Skip = new JButton();
 		Skip.setIcon(new ImageIcon("res/skip.png"));
 		Skip.setBounds(197, 115, 80, 25);
@@ -55,25 +60,31 @@ public class LongBreak extends ViewCore {
 		Skip.setOpaque(false);
 		getContentPane().add(Skip);
 
+		// state dot 1
 		State1 = new JLabel();
 		State1.setIcon(new ImageIcon("res/filled_dot.png"));
 		State1.setBounds(155, 167, 18, 16);
 		getContentPane().add(State1);
 
+		// state dot 2
 		State2 = new JLabel();
 		State2.setIcon(new ImageIcon("res/filled_dot.png"));
 		State2.setBounds(191, 167, 18, 16);
 		getContentPane().add(State2);
 
+		// state dot 3
 		State3 = new JLabel();
 		State3.setIcon(new ImageIcon("res/filled_dot.png"));
 		State3.setBounds(222, 167, 18, 16);
 		getContentPane().add(State3);
 
+		// state dot 4
 		State4 = new JLabel();
 		State4.setIcon(new ImageIcon("res/filled_dot.png"));
 		State4.setBounds(252, 167, 18, 16);
 		getContentPane().add(State4);
+		
+		new LBreakTimerButton(PlayPause, Skip, Time, state);
 	}
 
 }

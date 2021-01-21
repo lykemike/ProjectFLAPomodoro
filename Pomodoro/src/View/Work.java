@@ -6,6 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import Stat_Controller.StatButton;
+import TimerButton_Controller.WorkTimerButton;
+
 public class Work extends ViewCore {
 	private JLabel Time, State1, State2, State3, State4;
 	private JButton PlayPause, Stats;
@@ -37,6 +40,7 @@ public class Work extends ViewCore {
 		PlayPause.setContentAreaFilled(false);
 		PlayPause.setFocusPainted(false);
 		PlayPause.setOpaque(false);
+		new WorkTimerButton(PlayPause, Time, state);
 		getContentPane().add(PlayPause);
 
 		// view stats button
@@ -47,6 +51,7 @@ public class Work extends ViewCore {
 		Stats.setContentAreaFilled(false);
 		Stats.setFocusPainted(false);
 		Stats.setOpaque(false);
+		new StatButton(Stats);
 		getContentPane().add(Stats);
 
 		// state dot 1
