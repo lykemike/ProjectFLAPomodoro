@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
+import CSV_Controller.WriteWorkCSV;
 import View.Break;
 import View.LongBreak;
 
@@ -34,7 +35,7 @@ public class WorkTimerButton implements ActionListener {
 	}
 
 	public void startWork() {
-		countDown = new Timer(1000, new ActionListener() {
+		countDown = new Timer(1, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -61,6 +62,7 @@ public class WorkTimerButton implements ActionListener {
 
 						SwingUtilities.windowForComponent(PlayPause).setVisible(false);
 					} else {
+						new WriteWorkCSV().writeFile();
 						new Break(state).BConfig();
 
 						SwingUtilities.windowForComponent(PlayPause).setVisible(false);

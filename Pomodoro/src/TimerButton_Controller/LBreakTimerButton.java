@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
+import CSV_Controller.WriteLBreakCSV;
 import View.Work;
 
 public class LBreakTimerButton {
@@ -36,7 +37,7 @@ public class LBreakTimerButton {
 	}
 
 	private void startLBreak() {
-		countDown = new Timer(1000, new ActionListener() {
+		countDown = new Timer(1, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -59,6 +60,7 @@ public class LBreakTimerButton {
 					countDown.stop();
 					state = 1;
 
+					new WriteLBreakCSV().writeFile();
 					Work work = new Work(state);
 					work.WConfig();
 
@@ -78,6 +80,7 @@ public class LBreakTimerButton {
 				countDown.stop();
 				state = 1;
 
+				new WriteLBreakCSV().writeFile();
 				new Work(state).WConfig();
 				SwingUtilities.windowForComponent(PlayPause).setVisible(false);
 			}
