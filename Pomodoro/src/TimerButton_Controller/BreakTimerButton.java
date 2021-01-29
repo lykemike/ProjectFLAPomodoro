@@ -38,7 +38,7 @@ public class BreakTimerButton extends JFrame {
 	}
 
 	private void startBreak() {
-		countDown = new Timer(1, new ActionListener() {
+		countDown = new Timer(1000, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {

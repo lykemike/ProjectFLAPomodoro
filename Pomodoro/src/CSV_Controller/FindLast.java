@@ -24,7 +24,11 @@ public class FindLast {
 			
 			while((line = br.readLine()) != null) {
 				
+<<<<<<< HEAD
 				if(line.contains("Work")) {
+=======
+				if(line.contains("Long Break")) {
+>>>>>>> a88799de794c74c8bc40d6f7f304a30aaf1dbed5
 					Date todayDay = new Date();
 					
 					if(line.contains(dateFormatter.format(todayDay))){
