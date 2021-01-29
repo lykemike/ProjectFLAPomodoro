@@ -57,8 +57,8 @@ public class WorkTimerButton implements ActionListener {
 					countDown.stop();
 
 					if (state == 4) {
-						LongBreak lBreak = new LongBreak(state);
-						lBreak.LBConfig();
+						new WriteWorkCSV().writeFile();
+						new LongBreak(state).LBConfig();
 
 						SwingUtilities.windowForComponent(PlayPause).setVisible(false);
 					} else {
