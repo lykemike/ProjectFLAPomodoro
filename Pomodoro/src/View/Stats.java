@@ -6,6 +6,8 @@ import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import Stat_Controller.UpdateStats;
 import net.miginfocom.swing.MigLayout;
 
 public class Stats extends JFrame {
@@ -60,6 +62,21 @@ public class Stats extends JFrame {
 		
 		y7 = new JLabel("0");
 		getContentPane().add(y7, "cell 12 1");
+		
+		setVal();
+	}
+	
+	private void setVal() {
+		UpdateStats us = new UpdateStats();
+		int[] dayVal = us.updateDayVal();
+		
+		y1.setText(Integer.toString(dayVal[0]));
+		y2.setText(Integer.toString(dayVal[1]));
+		y3.setText(Integer.toString(dayVal[2]));
+		y4.setText(Integer.toString(dayVal[3]));
+		y5.setText(Integer.toString(dayVal[4]));
+		y6.setText(Integer.toString(dayVal[5]));
+		y7.setText(Integer.toString(dayVal[6]));
 	}
 	
 	private void config() {
