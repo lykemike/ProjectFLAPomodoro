@@ -35,7 +35,7 @@ public class WorkTimerButton implements ActionListener {
 	}
 
 	public void startWork() {
-		countDown = new Timer(1, new ActionListener() {
+		countDown = new Timer(1000, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
